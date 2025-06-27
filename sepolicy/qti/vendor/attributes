@@ -1,10 +1,1 @@
-vendor_hal_attribute(cameraMDM)
 vendor_hal_attribute(oplusSensor)
-vendor_hal_attribute(oplus_cammidasservice)
-vendor_hal_attribute(oplus_performance)
-vendor_hal_attribute(oplus_project)
-
-attribute hal_dms;
-attribute hal_dms_client;
-attribute hal_dms_server;
-attribute vendor_service;

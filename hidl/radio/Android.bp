@@ -1,6 +1,0 @@
-cc_library {
-    name: "libshims_ocsclk",
-    srcs: ["OcsClkShim.cpp"],
-    compile_multilib: "64",
-    vendor: true,
-}

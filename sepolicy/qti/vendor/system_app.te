@@ -1,18 +1,1 @@
-rw_dir_file(system_app, sysfs_dm)
-rw_dir_file(system_app, sysfs_vibrator)
-rw_dir_file(system_app, vendor_proc_display)
-rw_dir_file(system_app, vendor_proc_wireless)
-rw_dir_file(system_app, vendor_sysfs_graphics)
-rw_dir_file(system_app, vendor_sysfs_kgsl)
-rw_dir_file(system_app, vendor_sysfs_msm_perf)
-rw_dir_file(system_app, vendor_sysfs_usb_supply)
-
-# Battery Health
-allow system_app vendor_sysfs_battery_supply:dir search;
-allow system_app vendor_sysfs_battery_supply:file r_file_perms;
 allow system_app sysfs_zram:dir { search };
-allow system_app proc_pagetypeinfo:file { read };
-
-# To allow Settings to find and bind Google Battery HAL
-allow system_app hal_googlebattery_service:service_manager find;
-binder_call(system_app, hal_googlebattery)

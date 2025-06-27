@@ -15,6 +15,7 @@ type vendor_proc_display, fs_type, proc_type;
 type vendor_sysfs_msm_subsys, fs_type, sysfs_type;
 
 # Engineering
+type vendor_persist_engineer_file, file_type;
 type vendor_proc_engineer, fs_type, proc_type;
 
 # Fingerprint
@@ -26,18 +27,8 @@ type vendor_proc_eng_cali_file, fs_type, proc_type;
 type vendor_proc_oplus_als_file, fs_type, proc_type;
 type vendor_sysfs_sensor_fb, fs_type, sysfs_type;
 
-# SSR
-type ramdump_vendor_data_file, file_type, data_file_type;
-
 # TEE
 type vendor_proc_tee_bind_core, fs_type, proc_type;
 
-# TOF
-type vendor_sysfs_tof, fs_type, sysfs_type;
-
-# Ultrasound
-type vendor_proc_ultrasound, fs_type, proc_type;
-
 # Versioning
 type vendor_proc_oplus_version, fs_type, proc_type;
-

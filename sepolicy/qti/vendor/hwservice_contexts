@@ -1,37 +1,21 @@
 # Camera
-vendor.oplus.hardware.cameraextension::ICameraExtensionService         u:object_r:vendor_hal_camera_extension_hwservice:s0
-vendor.oplus.hardware.cameraMDM::IOPlusCameraMDM                       u:object_r:vendor_hal_cameraMDM_hwservice:s0
-vendor.oplus.hardware.cameraextension::ICameraExtensionService         u:object_r:vendor_hal_camera_extension_hwservice:s0
 vendor.oplus.hardware.cammidasservice::IMIDASService                   u:object_r:hal_camera_hwservice:s0
 vendor.qti.hardware.camera.cameraextension::ICameraExtensionService    u:object_r:vendor_hal_camera_extension_hwservice:s0
-
-# Display (CWB)
-vendor.oplus.hardware.cwb::ICwbService    u:object_r:hal_graphics_composer_hwservice:s0
 
 # Display (Pixelworks)
 vendor.pixelworks.hardware.display::IIris           u:object_r:hal_graphics_composer_hwservice:s0
 vendor.pixelworks.hardware.feature::IIrisFeature    u:object_r:hal_graphics_composer_hwservice:s0
 
-# Dolby
-vendor.dolby.hardware.dms::IDms                     u:object_r:hal_dms_hwservice:s0
-vendor.dolby_v3_6.hardware.dms360::IDms             u:object_r:hal_dms_hwservice:s0
-
 # Fingerprint
 vendor.oplus.hardware.biometrics.fingerprint::IBiometricsFingerprint    u:object_r:hal_fingerprint_hwservice:s0
 vendor.oplus.hardware.commondcs::ICommonDcsHalService                   u:object_r:hal_fingerprint_hwservice:s0
-vendor.oplus.hardware.osense.client::IOsenseAidlHalReporter             u:object_r:hal_fingerprint_hwservice:s0
+vendor.oplus.hardware.performance::IPerformance                         u:object_r:hal_fingerprint_hwservice:s0
 
 # NFC
-vendor.nxp.eventprocessor::INxpEseEvtProcessor    u:object_r:hal_nfc_hwservice:s0
-vendor.nxp.nxpese::INxpEse                        u:object_r:hal_nfc_hwservice:s0
-vendor.nxp.nxpnfc::INxpNfc                        u:object_r:hal_nfc_hwservice:s0
-vendor.nxpnq330.nxpese::INxpEse                   u:object_r:hal_nfc_hwservice:s0
+vendor.nxp.nxpnfc::INxpNfc    u:object_r:hal_nfc_hwservice:s0
 
 # ORMS
 vendor.oplus.hardware.orms::IOrmsHalProxy    u:object_r:vendor_hal_orms_hwservice:s0
-
-# Performance
-vendor.oplus.hardware.performance::IPerformance    u:object_r:vendor_hal_performance_hwservice:s0
 
 # Sensors
 vendor.oplus.hardware.oplusSensor::ISensorFeature    u:object_r:vendor_hal_oplusSensor_hwservice:s0
@@ -39,5 +23,4 @@ vendor.oplus.hardware.oplusSensor::ISensorFeature    u:object_r:vendor_hal_oplus
 # Telephony
 vendor.oplus.hardware.appradio::IOplusAppRadio    u:object_r:hal_telephony_hwservice:s0
 vendor.oplus.hardware.ims::IOplusImsRadio         u:object_r:hal_telephony_hwservice:s0
-vendor.oplus.hardware.radio::IOplusRadio          u:object_r:hal_telephony_hwservice:s0                                        u:object_r:hal_dms_hwservice:s0
-
+vendor.oplus.hardware.radio::IOplusRadio          u:object_r:hal_telephony_hwservice:s0

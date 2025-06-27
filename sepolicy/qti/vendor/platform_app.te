@@ -1,7 +1,1 @@
 r_dir_file(platform_app, vendor_proc_ui_soc_decimal)
-allow platform_app hal_dms_hwservice:hwservice_manager find;
-binder_call(platform_app, hal_dms_default)
-# allow SystemUI to find and bind Google Battery HAL
-allow platform_app hal_googlebattery_service:service_manager find;
-binder_call(platform_app, hal_googlebattery)
-get_prop(platform_app, audio_config_prop)

@@ -25,15 +25,10 @@ namespace fingerprint {
 namespace V2_3 {
 namespace implementation {
 
-// Power AIDL instance name
-static const std::string kPowerInstance = std::string(IPower::descriptor) + "/default";
-
 BiometricsFingerprint::BiometricsFingerprint()
     : mOplusDisplayFd(open("/dev/oplus_display", O_RDWR)) {
     mOplusBiometricsFingerprint = IOplusBiometricsFingerprint::getService();
     mOplusBiometricsFingerprint->setHalCallback(this);
-    mPowerService = IPower::fromBinder(ndk::SpAIBinder(
-        AServiceManager_getService(kPowerInstance.c_str())));
 }
 
 Return<uint64_t> BiometricsFingerprint::setNotify(
@@ -43,19 +38,16 @@ Return<uint64_t> BiometricsFingerprint::setNotify(
 }
 
 Return<uint64_t> BiometricsFingerprint::preEnroll() {
-    this->isEnrolling = true;
     setDimlayerHbm(1);
     return mOplusBiometricsFingerprint->preEnroll();
 }
 
 Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69>& hat,
                                                     uint32_t gid, uint32_t timeoutSec) {
-    setDimlayerHbm(1);
     return mOplusBiometricsFingerprint->enroll(hat, gid, timeoutSec);
 }
 
 Return<RequestStatus> BiometricsFingerprint::postEnroll() {
-    this->isEnrolling = false;
     setDimlayerHbm(0);
     return mOplusBiometricsFingerprint->postEnroll();
 }
@@ -65,9 +57,7 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
-    if (!this->isEnrolling) {
-        setDimlayerHbm(0);
-    }
+    setDimlayerHbm(0);
     return mOplusBiometricsFingerprint->cancel();
 }
 
@@ -85,8 +75,7 @@ Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
 }
 
 Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId, uint32_t gid) {
-    // In case postEnroll never got called for whatever reason, set isEnrolling to false.
-    this->isEnrolling = false;
+    setDimlayerHbm(1);
     return mOplusBiometricsFingerprint->authenticate(operationId, gid);
 }
 
@@ -96,17 +85,11 @@ Return<bool> BiometricsFingerprint::isUdfps(uint32_t sensorID) {
 
 Return<void> BiometricsFingerprint::onFingerDown(uint32_t x, uint32_t y, float minor, float major) {
     setFpPress(1);
-    if (!this->isEnrolling) {
-        setDimlayerHbm(1);
-    }
     return mOplusBiometricsFingerprint->onFingerDown(x, y, minor, major);
 }
 
 Return<void> BiometricsFingerprint::onFingerUp() {
     setFpPress(0);
-    if (!this->isEnrolling) {
-        setDimlayerHbm(1);
-    }
     return mOplusBiometricsFingerprint->onFingerUp();
 }
 
@@ -133,10 +116,8 @@ Return<void> BiometricsFingerprint::onAuthenticated(uint64_t deviceId, uint32_t 
 
 Return<void> BiometricsFingerprint::onError(uint64_t deviceId, FingerprintError error,
                                             int32_t vendorCode) {
+    setDimlayerHbm(0);
     setFpPress(0);
-    if (!this->isEnrolling) {
-        setDimlayerHbm(1);
-    }
     return mClientCallback->onError(deviceId, error, vendorCode);
 }
 

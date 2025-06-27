@@ -16,14 +16,11 @@
 
 #pragma once
 
-#include <android/binder_manager.h>
 #include <android-base/properties.h>
 #include <android/hardware/biometrics/fingerprint/2.1/types.h>
 #include <android/hardware/biometrics/fingerprint/2.2/IBiometricsFingerprintClientCallback.h>
 #include <android/hardware/biometrics/fingerprint/2.3/IBiometricsFingerprint.h>
 #include <android/log.h>
-#include <aidl/android/hardware/power/IPower.h>
-#include <aidl/android/hardware/power/Mode.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <log/log.h>
@@ -48,8 +45,6 @@ using ::android::hardware::biometrics::fingerprint::V2_1::RequestStatus;
 using ::android::hardware::biometrics::fingerprint::V2_2::FingerprintAcquiredInfo;
 using ::android::hardware::biometrics::fingerprint::V2_2::IBiometricsFingerprintClientCallback;
 using ::android::hardware::biometrics::fingerprint::V2_3::IBiometricsFingerprint;
-using ::aidl::android::hardware::power::IPower;
-using ::aidl::android::hardware::power::Mode;
 
 using IOplusBiometricsFingerprint =
         vendor::oplus::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint;
@@ -129,10 +124,8 @@ class BiometricsFingerprint : public IBiometricsFingerprint,
 
     sp<IOplusBiometricsFingerprint> mOplusBiometricsFingerprint;
     sp<V2_1::IBiometricsFingerprintClientCallback> mClientCallback;
-    std::shared_ptr<IPower> mPowerService;
 
     int mOplusDisplayFd;
-    bool isEnrolling;
 };
 
 }  // namespace implementation
