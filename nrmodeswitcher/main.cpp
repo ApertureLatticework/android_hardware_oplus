@@ -75,7 +75,7 @@ int main() {
             auto status = radio->setNrMode(kOplusRilSerial, mode);
             if (!status.isOk() || in_result != 0) {
                 LOG(ERROR) << "setNrMode failed for SIM" << i
-                           << ", (remaining retries: " << retry - 1 << ")";
+                           << ", try again soon (remaining retry " << retry - 1 << ")";
                 std::this_thread::sleep_for(1s);
                 continue;
             }
