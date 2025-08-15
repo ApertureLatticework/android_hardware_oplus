@@ -19,6 +19,5 @@ constexpr int DOUBLE_TAP_ENABLE_NODE = 1;
 constexpr int DOUBLE_TAP_INDEP_NODE = 21;
 constexpr int GAME_SWITCH_ENABLE_NODE = 26;
 constexpr int GLOVE_MODE_ENABLE_NODE = 192;
-constexpr int ONEPULSE_MODE_ENABLE_NODE = 201;
 
 }  // namespace OplusTouchConstants
