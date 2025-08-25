@@ -18,4 +18,4 @@ allow hal_oplus_esim_aidl vendor_reserve_partition:blk_file {read write open};
 
 allow hal_oplus_esim_aidl self:qipcrtr_socket create_socket_perms_no_ioctl;
 
-set_prop(hal_oplus_esim_aidl, vendor_radio_prop)
+set_prop(hal_oplus_esim_aidl, vendor_oplus_esim_prop)
