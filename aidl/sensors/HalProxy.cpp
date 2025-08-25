@@ -533,11 +533,14 @@ void HalProxy::initializeSensorList() {
                     ALOGV("Loaded sensor: %s", sensor.name.c_str());
                     sensor.sensorHandle = setSubHalIndex(sensor.sensorHandle, subHalIndex);
                     setDirectChannelFlags(&sensor, mSubHalList[subHalIndex]);
+<<<<<<< HEAD
                     if (static_cast<int>(sensor.type) == SENSOR_TYPE_QTI_WISE_LIGHT) {
                         sensor.type = V2_1::SensorType::LIGHT;
                         sensor.typeAsString = SENSOR_STRING_TYPE_LIGHT;
                         AlsCorrection::init();
                     }
+=======
+>>>>>>> 8dfc81b51c3648b667ebd0c1747978c7add800d5
                     bool keep = patchOplusPickupSensor(sensor) && patchOplusGlanceSensor(sensor);
                     if (!keep) {
                         continue;
