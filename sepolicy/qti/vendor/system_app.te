@@ -1,0 +1,3 @@
+# Allow system_app to set one pulse mode
+allow system_app vendor_sysfs_graphics:dir search;
+allow system_app vendor_sysfs_graphics:file rw_file_perms;
