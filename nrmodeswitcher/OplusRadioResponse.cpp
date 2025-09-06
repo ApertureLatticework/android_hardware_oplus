@@ -29,7 +29,8 @@ ndk::ScopedAStatus OplusRadioResponse::setModemErrorFatalResponse(
     return ndk::ScopedAStatus::ok();
 }
 
-ndk::ScopedAStatus OplusRadioResponse::setVoNrEnabledResponse(const OplusRadioResponseInfo& info) {
+ndk::ScopedAStatus OplusRadioResponse::setVoNrEnabledResponse(
+        const OplusRadioResponseInfo& info) {
     return ndk::ScopedAStatus::ok();
 }
 
@@ -57,7 +58,12 @@ ndk::ScopedAStatus OplusRadioResponse::setSlowStartResponse(const OplusRadioResp
     return ndk::ScopedAStatus::ok();
 }
 
+<<<<<<< HEAD
 ndk::ScopedAStatus OplusRadioResponse::setCtVolteModeResponse(const OplusRadioResponseInfo& info) {
+=======
+ndk::ScopedAStatus OplusRadioResponse::setCtVolteModeResponse(
+        const OplusRadioResponseInfo& info) {
+>>>>>>> 5645938ba37391c5d105970de4b1c9be1f70ef72
     return ndk::ScopedAStatus::ok();
 }
 
@@ -171,8 +177,13 @@ ndk::ScopedAStatus OplusRadioResponse::setPsDetachAttachActionResponse(
     return ndk::ScopedAStatus::ok();
 }
 
+<<<<<<< HEAD
 ndk::ScopedAStatus OplusRadioResponse::unlockRegionlockResponse(const OplusRadioResponseInfo& info,
                                                                 int32_t result) {
+=======
+ndk::ScopedAStatus OplusRadioResponse::unlockRegionlockResponse(
+        const OplusRadioResponseInfo& info, int32_t result) {
+>>>>>>> 5645938ba37391c5d105970de4b1c9be1f70ef72
     return ndk::ScopedAStatus::ok();
 }
 
