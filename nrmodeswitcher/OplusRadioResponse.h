@@ -51,16 +51,10 @@ class OplusRadioResponse : public BnOplusRadioResponse {
             const OplusRadioResponseInfo& info) override;
     ndk::ScopedAStatus getSimlockFactoryResetTimeResponse(
             const OplusRadioResponseInfo& info, const std::vector<uint8_t>& status) override;
-<<<<<<< HEAD
-    ndk::ScopedAStatus setSimlockActivateTimeResponse(const OplusRadioResponseInfo& info) override;
-    ndk::ScopedAStatus getSimlockActivateTimeResponse(const OplusRadioResponseInfo& info,
-                                                      const std::vector<uint8_t>& status) override;
-=======
     ndk::ScopedAStatus setSimlockActivateTimeResponse(
             const OplusRadioResponseInfo& info) override;
     ndk::ScopedAStatus getSimlockActivateTimeResponse(
             const OplusRadioResponseInfo& info, const std::vector<uint8_t>& status) override;
->>>>>>> 5645938ba37391c5d105970de4b1c9be1f70ef72
     ndk::ScopedAStatus getSimlockFeatureResponse(const OplusRadioResponseInfo& info,
                                                  const std::vector<uint8_t>& feature) override;
     ndk::ScopedAStatus getSimlockLockMarkResponse(const OplusRadioResponseInfo& info,
@@ -68,26 +62,16 @@ class OplusRadioResponse : public BnOplusRadioResponse {
     ndk::ScopedAStatus getSimlockDeviceLockStateResponse(const OplusRadioResponseInfo& info,
                                                          int32_t lockstate) override;
     ndk::ScopedAStatus getSimlockDeviceLockinfoResponse(
-<<<<<<< HEAD
-            const OplusRadioResponseInfo& info, const std::vector<uint8_t>& lockinfo) override;
-    ndk::ScopedAStatus getSimlockVersionInfoResponse(const OplusRadioResponseInfo& info,
-                                                     const std::vector<uint8_t>& version) override;
-=======
             const OplusRadioResponseInfo& info,
             const std::vector<uint8_t>& lockinfo) override;
     ndk::ScopedAStatus getSimlockVersionInfoResponse(
             const OplusRadioResponseInfo& info, const std::vector<uint8_t>& version) override;
->>>>>>> 5645938ba37391c5d105970de4b1c9be1f70ef72
     ndk::ScopedAStatus getSimlockMaxRetryResponse(const OplusRadioResponseInfo& info,
                                                   int32_t result) override;
     ndk::ScopedAStatus getSimlockCurrentRetryResponse(const OplusRadioResponseInfo& info,
                                                       int32_t result) override;
-<<<<<<< HEAD
-    ndk::ScopedAStatus setPsDetachAttachActionResponse(const OplusRadioResponseInfo& info) override;
-=======
     ndk::ScopedAStatus setPsDetachAttachActionResponse(
             const OplusRadioResponseInfo& info) override;
->>>>>>> 5645938ba37391c5d105970de4b1c9be1f70ef72
     ndk::ScopedAStatus unlockRegionlockResponse(const OplusRadioResponseInfo& info,
                                                 int32_t result) override;
     ndk::ScopedAStatus updateRegionlockKeyResponse(const OplusRadioResponseInfo& info,
@@ -96,11 +80,6 @@ class OplusRadioResponse : public BnOplusRadioResponse {
             const OplusRadioResponseInfo& info, const std::vector<uint8_t>& result) override;
     ndk::ScopedAStatus setRegionlockSettingDataResponse(const OplusRadioResponseInfo& info,
                                                         int32_t result) override;
-<<<<<<< HEAD
-    ndk::ScopedAStatus setSimlockOfflineLockResponse(const OplusRadioResponseInfo& info) override;
-    ndk::ScopedAStatus getSimlockOfflineLockResponse(
-            const OplusRadioResponseInfo& info, const std::vector<int32_t>& retryCount) override;
-=======
     ndk::ScopedAStatus setSimlockOfflineLockResponse(
             const OplusRadioResponseInfo& info) override;
     ndk::ScopedAStatus getSimlockOfflineLockResponse(
