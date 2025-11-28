@@ -14,11 +14,11 @@ import android.os.Looper
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
-import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
 import com.android.settingslib.widget.MainSwitchPreference
+import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
-class DozeSettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeListener {
+class DozeSettingsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceChangeListener {
     private lateinit var alwaysOnDisplayPreference: SwitchPreferenceCompat
 
     private var pickUpPreference: ListPreference? = null
@@ -41,7 +41,7 @@ class DozeSettingsFragment : PreferenceFragmentCompat(), Preference.OnPreference
         }
 
         val dozeEnabled = Utils.isDozeEnabled(requireContext())
-        val switchBar = findPreference<MainSwitchPreference>(Utils.DOZE_ENABLE)!!
+        switchBar = findPreference(Utils.DOZE_ENABLE)!!
         switchBar.onPreferenceChangeListener = this
         switchBar.isChecked = dozeEnabled
 
@@ -80,12 +80,12 @@ class DozeSettingsFragment : PreferenceFragmentCompat(), Preference.OnPreference
     }
 
     override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
-        val isChecked = newValue as Boolean
         when (preference.key) {
             Utils.ALWAYS_ON_DISPLAY -> {
-                Utils.enableAlwaysOn(requireContext(), isChecked)
+                Utils.enableAlwaysOn(requireContext(), newValue as Boolean)
             }
             Utils.DOZE_ENABLE -> {
+                val isChecked = newValue as Boolean
                 Utils.enableDoze(requireContext(), isChecked)
                 Utils.checkDozeService(requireContext())
 
