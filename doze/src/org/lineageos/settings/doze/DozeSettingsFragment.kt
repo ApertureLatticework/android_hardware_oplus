@@ -82,7 +82,8 @@ class DozeSettingsFragment : SettingsBasePreferenceFragment(), Preference.OnPref
     override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
         when (preference.key) {
             Utils.ALWAYS_ON_DISPLAY -> {
-                Utils.enableAlwaysOn(requireContext(), newValue as Boolean)
+                val isChecked = newValue as Boolean
+                Utils.enableAlwaysOn(requireContext(), isChecked)
             }
             Utils.DOZE_ENABLE -> {
                 val isChecked = newValue as Boolean

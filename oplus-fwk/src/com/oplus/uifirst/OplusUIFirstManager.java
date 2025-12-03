@@ -5,7 +5,7 @@
 
 package com.oplus.uifirst;
 
-public class OplusUIFirstManager {
+public class OplusUIFirstManager implements IOplusUIFirstManager {
     private static OplusUIFirstManager sInstance = null;
 
     public static OplusUIFirstManager getInstance() {
@@ -14,6 +14,5 @@ public class OplusUIFirstManager {
         }
         return sInstance;
     }
-
-    public void setBinderThreadUxFlag(int pid, int flag) {}
+    // public void setBinderThreadUxFlag(int pid, int flag) {}
 }
