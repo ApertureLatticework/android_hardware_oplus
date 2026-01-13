@@ -18,7 +18,8 @@ import androidx.preference.SwitchPreferenceCompat
 import com.android.settingslib.widget.MainSwitchPreference
 import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
-class DozeSettingsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceChangeListener {
+class DozeSettingsFragment :
+    SettingsBasePreferenceFragment(), Preference.OnPreferenceChangeListener {
     private lateinit var alwaysOnDisplayPreference: SwitchPreferenceCompat
 
     private var pickUpPreference: ListPreference? = null
