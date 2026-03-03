@@ -22,8 +22,8 @@ rw_dir_file(hal_oplus_touch_aidl, vendor_proc_display)
 
 allow hal_oplus_touch_aidl oplus_touchdaemon_device:chr_file rw_file_perms;
 
-allow hal_oplus_touch_aidl vendor_persist_oplus_touch_file:dir search;
-allow hal_oplus_touch_aidl vendor_persist_oplus_touch_file:file rw_file_perms;
+allow hal_oplus_touch_aidl vendor_persist_oplus_touch_file:dir rw_dir_perms;
+allow hal_oplus_touch_aidl vendor_persist_oplus_touch_file:file create_file_perms;
 
 get_prop(hal_oplus_touch_aidl, system_oplus_touch_prop)
 set_prop(hal_oplus_touch_aidl, system_oplus_touch_prop)
