@@ -58,6 +58,7 @@ vendor.oplus.hardware.radio.IRadioStable/OplusRadio1                 u:object_r:
 
 # Secure Element
 vendor.oplus.hardware.secure_element.ISecureElement/default    u:object_r:hal_secure_element_extend_service:s0
+vendor.tms.tmsese_aidl.ITmsEse/default                         u:object_r:hal_secure_element_extend_service:s0
 
 # Sensors
 vendor.oplus.hardware.oplusSensor.ISensorFeature/default    u:object_r:hal_oplus_sensor_aidl_service:s0

@@ -152,6 +152,7 @@
 
 # Secure Element
 /(odm|vendor/odm)/bin/hw/android\.hardware\.secure_element@1\.2-service-goodix    u:object_r:hal_secure_element_default_exec:s0
+/(odm|vendor/odm)/bin/hw/android\.hardware\.secure_element-service-tms            u:object_r:hal_secure_element_default_exec:s0
 /(odm|vendor/odm)/bin/hw/android\.hardware\.secure_element-service\.qti           u:object_r:hal_secure_element_default_exec:s0
 /(odm|vendor/odm)/bin/hw/vendor\.qti\.secure_element@1\.2-service                 u:object_r:hal_secure_element_default_exec:s0
 
