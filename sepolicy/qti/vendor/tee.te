@@ -1,3 +1,5 @@
+allow tee tee_device:chr_file rw_file_perms;
+
 allow tee vendor_gpt_block_device:blk_file read;
 
 allow tee vendor_persist_fingerprint_file:dir create_dir_perms;
