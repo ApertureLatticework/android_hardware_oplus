@@ -11,6 +11,8 @@ cc_binary {
         "-DLOG_TAG=\"android.hardware.vibrator.service.oplus\"",
     ] + select(soong_config_variable("OPLUS_LINEAGE_VIBRATOR_HAL", "USE_RICHTAP_EFFECT_REMAP"), {
         true: ["-DUSE_RICHTAP_EFFECT_REMAP"],
+    ] + select(soong_config_variable("OPLUS_LINEAGE_VIBRATOR_HAL", "USES_OPLUS_AWINIC"), {
+        true: ["-DUSES_OPLUS_AWINIC"],
         default: [],
     }),
     relative_install_path: "hw",
